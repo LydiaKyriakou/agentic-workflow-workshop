@@ -3,8 +3,24 @@ import { PageHeading } from "@/components/atoms/page-heading";
 import { fetchSessions } from "@/services/sessions";
 import { groupSessionsBySpeaker } from "@/utils/speakers";
 import { Flex } from "@chakra-ui/react";
+import type { Metadata } from "next";
 import type { Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const locale = (await params).locale as Locale;
+  const t = await getTranslations({ locale, namespace: "Speakers" });
+  const nav = await getTranslations({ locale, namespace: "Nav" });
+
+  return {
+    title: `${t("title")} | ${nav("home")}`,
+    description: t("description"),
+  };
+}
 
 export default async function SpeakersPage({
   params,

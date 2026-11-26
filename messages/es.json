@@ -17,5 +17,8 @@
     "title": "Ponentes",
     "description": "Quién habla en React Alicante, y cuándo.",
     "empty": "Todavía no hay ponentes anunciados."
+  },
+  "Theme": {
+    "toggle": "Cambiar tema"
   }
 }

@@ -13,6 +13,7 @@ export function SpeakerList({ speakers }: { speakers: Speaker[] }) {
   return (
     <Grid
       as="ul"
+      role="list"
       gap="4"
       templateColumns={{
         base: "1fr",

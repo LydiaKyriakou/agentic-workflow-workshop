@@ -17,5 +17,8 @@
     "title": "Speakers",
     "description": "Who is speaking at React Alicante, and when.",
     "empty": "No speakers announced yet."
+  },
+  "Theme": {
+    "toggle": "Change theme"
   }
 }

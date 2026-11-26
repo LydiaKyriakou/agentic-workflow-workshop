@@ -17,7 +17,14 @@ export function SpeakerCard({ speaker }: { speaker: Speaker }) {
         </CardTitle>
       </CardHeader>
       <CardContent paddingTop="2">
-        <Flex as="ul" direction="column" gap="3" listStyleType="none">
+        {/* Safari drops list semantics under list-style: none. */}
+        <Flex
+          as="ul"
+          role="list"
+          direction="column"
+          gap="3"
+          listStyleType="none"
+        >
           {speaker.sessions.map((session) => (
             <li key={session.id}>
               <ChakraLink
@@ -28,13 +35,17 @@ export function SpeakerCard({ speaker }: { speaker: Speaker }) {
                 gap="0.5"
                 color="var(--text-primary)"
                 textDecoration="none"
-                _hover={{ color: "var(--accent-hex)" }}
+                // Underline, not an accent colour: that fails contrast in dark.
+                css={{
+                  "&:hover [data-title]": { textDecoration: "underline" },
+                }}
               >
                 <Link href={`/sessions/${session.id}`}>
                   <Text as="span" fontSize="xs" color="var(--text-secondary)">
                     {session.startTime}
                   </Text>
-                  <Text as="span" fontSize="sm">
+                  {/* Session data is written in English in every locale. */}
+                  <Text as="span" fontSize="sm" lang="en" data-title>
                     {session.title}
                   </Text>
                 </Link>
