@@ -5,9 +5,11 @@ import { Menu, Portal } from "@chakra-ui/react";
 import { Laptop, Moon, Sun } from "lucide-react";
 import { useIsClient } from "@/hooks/use-is-client";
 import { useTheme } from "next-themes";
+import { useTranslations } from "next-intl";
 
 const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
+  const t = useTranslations("Theme");
   const isClient = useIsClient();
 
   if (!isClient) {
@@ -19,7 +21,7 @@ const ThemeSwitcher = () => {
   return (
     <Menu.Root positioning={{ placement: "bottom-start" }}>
       <Menu.Trigger asChild>
-        <Button variant="ghost" size={"sm"}>
+        <Button variant="ghost" size={"sm"} aria-label={t("toggle")}>
           {theme === "light" ? (
             <Sun key="light" size={ICON_SIZE} />
           ) : theme === "dark" ? (
@@ -34,6 +36,11 @@ const ThemeSwitcher = () => {
           <Menu.Content
             css={{
               background: "var(--surface-hex)",
+              // Chakra's own item colours are light-theme ones in both themes.
+              "& [role=menuitemradio]": { color: "var(--text-primary)" },
+              "& [role=menuitemradio][data-highlighted]": {
+                background: "var(--card-border-hover-hex)",
+              },
               borderColor: "var(--card-border-hex)",
             }}
           >
