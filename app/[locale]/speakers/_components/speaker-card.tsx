@@ -8,7 +8,11 @@ import { Link } from "@/i18n/navigation";
 import type { Speaker } from "@/types/speaker";
 import { Link as ChakraLink, Flex, Text } from "@chakra-ui/react";
 
-export function SpeakerCard({ speaker }: { speaker: Speaker }) {
+export interface SpeakerCardProps {
+  speaker: Speaker;
+}
+
+export function SpeakerCard({ speaker }: SpeakerCardProps) {
   return (
     <Card height="full">
       <CardHeader>

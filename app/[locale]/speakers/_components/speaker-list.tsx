@@ -3,7 +3,11 @@ import type { Speaker } from "@/types/speaker";
 import { Grid, Text } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 
-export function SpeakerList({ speakers }: { speakers: Speaker[] }) {
+export interface SpeakerListProps {
+  speakers: Speaker[];
+}
+
+export function SpeakerList({ speakers }: SpeakerListProps) {
   const t = useTranslations("Speakers");
 
   if (speakers.length === 0) {
