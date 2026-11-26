@@ -11,5 +11,10 @@
     "heading": "Guía de la conferencia React Alicante",
     "line1": "Tu agenda, tus sesiones —",
     "line2": "en un solo lugar"
+  },
+  "Speakers": {
+    "title": "Ponentes",
+    "description": "Quién habla en React Alicante, y cuándo.",
+    "empty": "Todavía no hay ponentes anunciados."
   }
 }
