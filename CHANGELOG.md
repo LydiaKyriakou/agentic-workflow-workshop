@@ -1,5 +1,39 @@
 # Changelog
 
+## [0.4.0] — 2026-11-26
+
+### Features
+
+- Add a Speakers page that lists each speaker with their sessions, in English and Spanish (#1)
+- Add the Speakers link to the navigation (#1)
+
+### Bug Fixes
+
+- Accessibility: make the theme menu readable and name its button (#1)
+- Accessibility on the Speakers page: underline session titles on hover instead
+  of recolouring them, localise the page title, mark English session titles and
+  keep list semantics in Safari (#1)
+
+### Refactoring
+
+- Name the Speakers component props (#1)
+
+### Tests
+
+- Cover the Speakers page, its metadata and the nav link (#1)
+
+## Test Suite
+
+| Suite          | Status     |
+| -------------- | ---------- |
+| ESLint         | ⏳ pending |
+| Type-check     | ⏳ pending |
+| Unit tests     | ⏳ pending |
+| Build (Vercel) | ⏳ pending |
+
+CI: not run. GitHub Actions has created no runs on this fork, and the check was
+waived for this release. ESLint, type-check and 29 unit tests passed locally.
+
 ## [0.3.2] — 2026-11-26
 
 ### Maintenance
