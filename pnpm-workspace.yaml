@@ -8,3 +8,8 @@ allowBuilds:
   # Native watcher and compiler we never reach: Next uses its own toolchain.
   "@parcel/watcher": false
   "@swc/core": false
+
+# `pnpm update` leaves Next's postcss on source-map-js 1.2.1, which has a
+# High advisory (GHSA-68fv-2mgg-jv7q). Remove once it resolves >=1.2.2 alone.
+overrides:
+  "source-map-js@<1.2.2": "^1.2.2"
