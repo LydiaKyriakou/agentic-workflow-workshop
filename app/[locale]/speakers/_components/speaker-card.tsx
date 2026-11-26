@@ -16,7 +16,7 @@ export function SpeakerCard({ speaker }: { speaker: Speaker }) {
           {speaker.name}
         </CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent paddingTop="2">
         <Flex as="ul" direction="column" gap="3" listStyleType="none">
           {speaker.sessions.map((session) => (
             <li key={session.id}>
