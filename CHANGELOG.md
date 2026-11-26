@@ -14,6 +14,10 @@
   of recolouring them, localise the page title, mark English session titles and
   keep list semantics in Safari (#1)
 
+### Security
+
+- Upgrade Next.js to 16.4.6 and patch `sharp` and `source-map-js` (#7, #8, #9)
+
 ### Refactoring
 
 - Name the Speakers component props (#1)
